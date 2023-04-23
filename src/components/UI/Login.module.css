@@ -1,0 +1,62 @@
+.mode{
+    font-size: 30px;
+    color: #8a2b06;
+}
+
+.modebtn{
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #8a2b06;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    color: #8a2b06;
+    font-size: 20px;
+}
+
+.modebtn:hover{
+    background-color: #FFDCB6;
+}
+
+.table{
+    padding: 5px;
+}
+
+.singleLabel{
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #8a2b06;
+    font-weight: bold;
+}
+
+.nameLabel{
+    font-size: 24px;
+    color: #8a2b06;
+}
+
+.playerInput{
+    width: 150px;
+    border: 2px solid #8a2b06;
+    border-radius: 5px;
+    height: 30px;
+    color: #8a2b06;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.start{
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #8a2b06;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    color: #8a2b06;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.start:hover{
+    background-color: #FFDCB6;
+}

@@ -1,0 +1,19 @@
+.player1{
+    display: inline-block;
+    font-size: 24px;
+    color: #8a2b06;
+    margin-left: -20px;
+}
+
+.player2{
+    display: inline-block;
+    font-size: 24px;
+    color: #8a2b06;
+    margin-left: 50px;
+}
+
+.draw{
+    font-size: 24px;
+    color: #8a2b06;
+    margin-top: 10px;
+}

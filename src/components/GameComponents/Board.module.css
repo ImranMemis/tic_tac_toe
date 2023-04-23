@@ -1,0 +1,11 @@
+.main{
+    width: 300px;
+    margin: 50px auto 0;
+}
+
+.board{
+    display: grid;
+    border: 2px solid #8a2b06;
+    grid-template-columns: 1fr 1fr 1fr;
+    gird-template-rows: 1fr 1fr 1fr;
+}
