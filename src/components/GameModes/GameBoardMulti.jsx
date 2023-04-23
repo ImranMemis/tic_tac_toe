@@ -17,7 +17,7 @@ const GameBoardMulti = ({getScore, newGame, setWinner, player2, player1}) =>{
     const  [squares, setSquares] = useState(defaultSquares());
     const  [gameOver,setGameOver] = useState(false);
     const  [xIsNext, setXisNext] = useState(true);
-
+    const  [availableSquares, setAvailableSquares] = useState(9);
 
 
     const handleSquareClick = (index) => {
@@ -39,6 +39,9 @@ const GameBoardMulti = ({getScore, newGame, setWinner, player2, player1}) =>{
             calculateWinner(squares);
             setXisNext(true);
         }
+        setAvailableSquares((prevState) =>{
+            return prevState - 1;
+        })
     }
     const calculateWinner = (squares) =>{
         for (let i = 0; i < lines.length; i++){
@@ -56,6 +59,9 @@ const GameBoardMulti = ({getScore, newGame, setWinner, player2, player1}) =>{
                     return;
                 }
             }
+        }
+        if(availableSquares === 1){
+            setGameOver(true);
         }
     }
 

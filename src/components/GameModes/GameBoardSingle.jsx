@@ -18,19 +18,7 @@ const GameBoardSingle = ({getScore, newGame, setWinner, player2, player1}) =>{
     const  [squares, setSquares] = useState(defaultSquares());
     const  [gameOver,setGameOver] = useState(false);
 
-    const handleSquareClick = (index) => {
-        if(gameOver){
-            return;
-        }
-        const isPlayerTurn = squares.filter(square=> square !== null).length % 2 === 0;
-        if(isPlayerTurn){
-            let newSquares = squares;
-            if(newSquares[index] !== null) return;
-            newSquares[index] = 'x';
-            setSquares([...newSquares])
-            calculateWinner(squares);
-        }
-    }
+
 
     const calculateWinner = useCallback((squares) =>{
         for (let i = 0; i < lines.length; i++){
@@ -51,8 +39,7 @@ const GameBoardSingle = ({getScore, newGame, setWinner, player2, player1}) =>{
                 }
             }
         }
-
-    }, [getScore, player1, player2, setWinner])
+    }, [getScore, player1, player2, setWinner]);
 
     useEffect(()=>{
         if(gameOver){
@@ -64,6 +51,7 @@ const GameBoardSingle = ({getScore, newGame, setWinner, player2, player1}) =>{
             let newSquares = squares;
             newSquares[index] = 'o';
             setSquares([...newSquares]);
+
         }
 
         if(isComputerTurn){
@@ -75,6 +63,20 @@ const GameBoardSingle = ({getScore, newGame, setWinner, player2, player1}) =>{
         }
 
     }, [squares, gameOver, calculateWinner]);
+
+    const handleSquareClick = (index) => {
+        if(gameOver){
+            return;
+        }
+        const isPlayerTurn = squares.filter(square=> square !== null).length % 2 === 0;
+        if(isPlayerTurn){
+            let newSquares = squares;
+            if(newSquares[index] !== null) return;
+            newSquares[index] = 'x';
+            setSquares([...newSquares])
+            calculateWinner(squares);
+        }
+    }
 
     const startNewGame = () =>{
         setSquares(defaultSquares());
