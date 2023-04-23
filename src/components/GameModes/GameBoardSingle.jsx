@@ -37,12 +37,12 @@ const GameBoardSingle = ({getScore, newGame, setWinner, player2, player1}) =>{
             const [a, b, c] = lines[i];
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
                 if (squares[a] === "x") {
-                    getScore(1,0,0);
+                    getScore(1,0);
                     setGameOver(true);
                     setWinner(player1);
                     return;
                 }else if(squares[a] === "o"){
-                    getScore(0,1,0);
+                    getScore(0,1);
                     setGameOver(true);
                     if(player2===""){
                         setWinner("CPU");

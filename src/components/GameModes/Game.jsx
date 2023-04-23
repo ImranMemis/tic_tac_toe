@@ -8,13 +8,11 @@ const Game = (props) =>  {
 
     const  [playerOnePoints, setPlayerOnePoints] = useState(0);
     const  [playerTwoPoints, setPlayerTwoPoints] = useState(0);
-    const  [draw, setDraw] = useState(0);
 
 
-    const getScore = (pl1, pl2, tie) => {
+    const getScore = (pl1, pl2) => {
         setPlayerOnePoints(playerOnePoints+pl1);
         setPlayerTwoPoints(playerTwoPoints+pl2);
-        setDraw(draw+ tie);
     }
 
 
@@ -22,7 +20,6 @@ const Game = (props) =>  {
     const newGame = () =>{
         setPlayerOnePoints(0);
         setPlayerTwoPoints(0);
-        setDraw(0);
         props.setWinner("");
         props.startNewGame();
     }
@@ -33,8 +30,7 @@ const Game = (props) =>  {
             player1 = {props.player1}
             player2 = {props.player2}
             playerOnePoints = {playerOnePoints}
-            playerTwoPoints = {playerTwoPoints}
-            draw = {draw}/>
+            playerTwoPoints = {playerTwoPoints}/>
             {
                 props.mode === "single" && <Singleplayer
                 getScore={getScore}
@@ -46,7 +42,6 @@ const Game = (props) =>  {
             }
             {
                 props.mode === "multi" && <Multiplayer
-                    setDraw={setDraw}
                     getScore={getScore}
                     newGame={newGame}
                     setWinner={props.setWinner}

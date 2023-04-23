@@ -11,7 +11,6 @@ const lines = [
     [0,4,8], [2,4,6],
 ]
 
-let turn = 0;
 
 const GameBoardMulti = ({getScore, newGame, setWinner, player2, player1}) =>{
 
@@ -19,36 +18,12 @@ const GameBoardMulti = ({getScore, newGame, setWinner, player2, player1}) =>{
     const  [gameOver,setGameOver] = useState(false);
     const  [xIsNext, setXisNext] = useState(true);
 
-    const calculateWinner = (squares) =>{
-        for (let i = 0; i < lines.length; i++){
-            const [a, b, c] = lines[i];
-            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                if (squares[a] === "x") {
-                    getScore(1,0,0);
-                    setGameOver(true);
-                    setWinner(player1);
-                    return;
-                }else if(squares[a] === "o"){
-                    getScore(0,1,0);
-                    setGameOver(true);
-                    setWinner(player2);
-                    return;
-                }
-            }
-        }
-        if(turn === 9){
-            getScore(0,0,1);
-            setWinner("draw");
-            setGameOver(true);
 
-        }
-    }
 
     const handleSquareClick = (index) => {
         if(gameOver){
             return;
         }
-        turn++;
         if(xIsNext){
             let newSquares = squares;
             if(newSquares[index] !== null) return;
@@ -65,7 +40,24 @@ const GameBoardMulti = ({getScore, newGame, setWinner, player2, player1}) =>{
             setXisNext(true);
         }
     }
-
+    const calculateWinner = (squares) =>{
+        for (let i = 0; i < lines.length; i++){
+            const [a, b, c] = lines[i];
+            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+                if (squares[a] === "x") {
+                    getScore(1,0);
+                    setGameOver(true);
+                    setWinner(player1);
+                    return;
+                }else if(squares[a] === "o"){
+                    getScore(0,1);
+                    setGameOver(true);
+                    setWinner(player2);
+                    return;
+                }
+            }
+        }
+    }
 
     const startNewGame = () =>{
         setSquares(defaultSquares());

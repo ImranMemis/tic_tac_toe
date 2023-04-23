@@ -60,3 +60,10 @@
 .start:hover{
     background-color: #FFDCB6;
 }
+
+@media screen and (max-width: 600px){
+    .modebtn{
+        margin-bottom: 10px;
+        width: 200px;
+    }
+}

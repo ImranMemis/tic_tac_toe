@@ -12,8 +12,15 @@
     margin-left: 50px;
 }
 
-.draw{
-    font-size: 24px;
-    color: #8a2b06;
-    margin-top: 10px;
+
+@media screen and (max-width: 600px) {
+    .player2{
+        display: block;
+        align-items: center;
+        margin-left: 0px;
+    }
+    .player1{
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
 }

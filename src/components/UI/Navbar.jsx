@@ -12,7 +12,6 @@ const Navbar = (props) => {
     return <div>
         <div className={classes.player1}>{props.player1}: {props.playerOnePoints}</div>
         <div className={classes.player2}>{playerTwo}: {props.playerTwoPoints}</div>
-        <div className={classes.draw}>Draw: {props.draw}</div>
     </div>
 }
 
