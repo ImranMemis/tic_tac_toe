@@ -1,6 +1,8 @@
-import classes from "./Navbar.module.css";
+import "./Navbar.css";
+
 
 const Navbar = (props) => {
+
     let playerTwo = "";
 
     if(props.player2 === ""){
@@ -10,8 +12,8 @@ const Navbar = (props) => {
     }
 
     return <div>
-        <div className={classes.player1}>{props.player1}: {props.playerOnePoints}</div>
-        <div className={classes.player2}>{playerTwo}: {props.playerTwoPoints}</div>
+        <div className={`player1 ${props.xIsNext ? "turn" : ""}`}>{props.player1}: {props.playerOnePoints}</div>
+        <div className={`player2 ${!props.xIsNext ? "turn" : ""}`}>{playerTwo}: {props.playerTwoPoints}</div>
     </div>
 }
 
