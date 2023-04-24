@@ -75,6 +75,8 @@ const Multiplayer = ({getScore, newGame, setWinner, player2, player1, xIsNext, s
         setSquares(defaultSquares);
         setGameOver(false);
         setWinner("");
+        setXisNext(true);
+        setAvailableSquares(9);
     }
 
     return(
